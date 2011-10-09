@@ -22,7 +22,7 @@ echo.
 echo 1) Create Database (%DATABASE_NAME%)
 echo 2) Create User (%USER_NAME%/%USER_PWD%)
 echo 3) Create Tables
-echo 4) Populate Data
+echo 4) Populate Test Data
 echo 5) Drop Tables
 echo 6) Quit
 echo.
@@ -31,7 +31,7 @@ set /p choice=Choice:
 if "%choice%"=="1" goto create_db
 if "%choice%"=="2" goto create_user
 if "%choice%"=="3" goto create_tables
-if "%choice%"=="4" goto populate_data
+if "%choice%"=="4" goto populate_test_data
 if "%choice%"=="5" goto drop_tables
 if "%choice%"=="6" goto exit
 goto menu
@@ -48,8 +48,8 @@ goto menu
 mysql --user=%ADMIN_USER% --password=%ADMIN_PWD% legendmud < 03_CreateTables.sql
 goto menu
 
-:populate_data
-mysql --user=%ADMIN_USER% --password=%ADMIN_PWD% legendmud < 04_PopulateData.sql
+:populate_test_data
+mysql --user=%ADMIN_USER% --password=%ADMIN_PWD% legendmud < 04_PopulateTestData.sql
 goto menu
 
 :drop_tables
