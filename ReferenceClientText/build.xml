@@ -22,7 +22,7 @@
   </target>
 
   <target name="move" depends="jar" description="Move the jar file to the specified location." >
-    <move file="build\ReferenceClientText.jar" todir="E:\Users\Chris\Desktop"/>
+    <move file="build\ReferenceClientText.jar" todir="F:\Users\Chris\Desktop\LegendMUD"/>
   </target>
     	
   <target name="clean" description="clean up" >
